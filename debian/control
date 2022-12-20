@@ -1,0 +1,26 @@
+Source: libperlio-utf8-strict-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Florian Schlichting <fsfs@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               libtest-exception-perl <!nocheck>,
+               perl-xs-dev,
+               perl:native
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libperlio-utf8-strict-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libperlio-utf8-strict-perl.git
+Homepage: https://metacpan.org/release/PerlIO-utf8_strict
+Rules-Requires-Root: no
+
+Package: libperlio-utf8-strict-perl
+Architecture: any
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         ${shlibs:Depends}
+Description: fast and correct UTF-8 Perl IO module
+ PerlIO::utf8_strict provides a fast and correct UTF-8 PerlIO layer.
+ Unlike perl's default :utf8 layer it checks the input for correctness
+ and will croak if it finds an ill-formed UTF-8 octet sequence or
+ noncharacter code points not meant for interchange.
